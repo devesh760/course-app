@@ -7,11 +7,8 @@ const Contactus = () =>{
     return (
       <div className="contact-us">
         <NavBar />
-        <div style={{ height: "500px", width: "100%" }}>
-          <img
-            style={{ height: "100%", width: "100%" }}
-            src="https://ccinfo24.com/courses/wp-content/uploads/2021/07/pawel-czerwinski-0xCCPIbl3M-unsplash-scaled.jpg"
-          />
+        <div className='image-bg'>
+          
         </div>
         <div className="form-wrapper flex">
           <pre>
