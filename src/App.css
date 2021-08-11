@@ -546,11 +546,3 @@ textarea{
     padding: 0 5px;
   }
 }
-.image-bg{
-  height: 500px;
-  width: 100vw;
-  background-image: url(https://ccinfo24.com/courses/wp-content/uploads/2021/07/pawel-czerwinski-0xCCPIbl3M-unsplash-scaled.jpg);
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
