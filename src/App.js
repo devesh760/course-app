@@ -6,9 +6,6 @@ import {Route} from 'react-router-dom'
 import { useEffect } from 'react';
 
 function App() {
-  useEffect(()=>{
-    
-  },[])
   return (
     <div className="App">
       <Route component={Home} path='/' exact/>

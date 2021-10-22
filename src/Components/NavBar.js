@@ -1,8 +1,11 @@
 import React, { useState,useEffect } from 'react'
+import {useHistory} from 'react-router-dom'
 import '../App.css'
+import Logo from "../Assets/Logo.png"
 const NavBar = () =>{
   let [visible,setVisible] = useState(false);
   let [show, setShow] = useState(false);
+  let history = useHistory();
   let styleForMobileNav = {
     display:visible?'flex':'none'
   }
@@ -30,24 +33,29 @@ const NavBar = () =>{
         <header style={styleForNav} className="header flex j-center a-center">
           <nav className="flex j-between">
             <img
-              src="https://ccinfo24.com/courses/wp-content/uploads/2021/07/cropped-Strong-3-1.png"
+              style={{ height: "75px", alignSelf: "center",cursor:'pointer' }}
+              src={Logo}
               alt="Logo"
+              onClick={()=>history.push("/")}
             />
             <div className="a-s-center flex a-center">
-              <a href="/">Home</a>
+              <a href="/">
+                Home
+              </a>
+              <hr />
               <a href="/contact-us">Contact Us</a>
             </div>
             <i
               onClick={() => setVisible(!visible)}
               style={{ fontSize: "25px", cursor: "pointer", color: "#434343" }}
               className={[
-                "a-s-center d-none",
+                "a-s-center",
                 visible ? "fas fa-times" : "fas fa-bars",
               ].join(" ")}
             ></i>
           </nav>
         </header>
-        <div style={styleForMobileNav} className="mobile-nav d-none">
+        <div style={styleForMobileNav} className="mobile-nav">
           <a href="/">Home</a>
           <a href="/contact-us">Contact Us</a>
         </div>

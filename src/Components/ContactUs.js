@@ -2,15 +2,30 @@ import React from 'react'
 import NavBar from './NavBar'
 import Footer from './Footer'
 import '../App.css'
+import {useHistory} from 'react-router-dom'
+import {Form,Button} from 'react-bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
+const RedStar = ()=>{
+  return <span style={{color:'red',fontSize:'1.1rem'}}> *</span>
+}
 
 const Contactus = () =>{
+  let history = useHistory();
+
+  function sendEmail(e){
+    e.preventDefault();
+    console.log(e.target);
+  }
     return (
       <div className="contact-us">
         <NavBar />
         <div style={{ height: "500px", width: "100%" }}>
           <img
-            style={{ height: "100%", width: "100%",objectFit:'cover' }}
+            style={{ height: "100%", width: "100%", objectFit: "cover" }}
             src="https://ccinfo24.com/courses/wp-content/uploads/2021/07/pawel-czerwinski-0xCCPIbl3M-unsplash-scaled.jpg"
+            onClick={() => history.go("./")}
           />
         </div>
         <div className="form-wrapper flex">
@@ -25,58 +40,71 @@ const Contactus = () =>{
                 color: "#64686D",
                 margin: "10px 0 20px 0",
                 textAlign: "center",
+                fontFamily: " 'Playfair Display', Sans-serif",
               }}
             >
               Contact us
             </h1>
-            <p style={{ flex: "1", textAlign: "center" ,color:'rgba(0,0,0,0.7)'}}>
+            <p
+              style={{
+                flex: "1",
+                textAlign: "center",
+                color: "rgba(0,0,0,0.7)",
+              }}
+            >
               Our team would be happy to all your questions.
             </p>
           </div>
-          <form>
-            <div>
-              <label>First Name(*)</label>
-              <input type="text" />
-            </div>
-            <div>
-              <label>Last Name(*)</label>
-              <input type="text" />
-            </div>
-            <div>
-              <label>Email(*)</label>
-              <input type="text" />
-            </div>
-            <div>
-              <label>Select Course</label>
-              <select
-                name="selelctcourse"
-                aria-required="true"
-                aria-invalid="false"
+          <Form>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>First name</Form.Label>
+              <Form.Control type="email" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Last name</Form.Label>
+              <Form.Control type="email" />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Last name</Form.Label>
+              <Form.Control type="phone" placeholder="" />
+            </Form.Group>
+
+            <Form.Select size="md" className="mb-3 mt-4">
+              <option>Large select</option>
+              <option>Large select</option>
+              <option>Large select</option>
+              <option>Large select</option>
+              <option>Large select</option>
+            </Form.Select>
+
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label>Type your Text here</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+            </Form.Group>
+            <Form.Group>
+              <Button
+                style={{ background: "#1F1399", border: "none" }}
+                variant="primary"
+                type="submit"
+                className='contact-btn'
               >
-                <option value="LingoQ Toddler">LingoQ Toddler</option>
-                <option value="CodeQ Junior">CodeQ Junior</option>
-                <option value="CodeQ Starter">CodeQ Starter</option>
-                <option value="CodeQ Junior">CodeQ Junior</option>
-                <option value="LingoQ Junior">LingoQ Junior</option>
-                <option value="CodeQ Explorer">CodeQ Explorer</option>
-                <option value="LingoQ Junior">LingoQ Junior</option>
-                <option value="CodeQ Ethical Hacking">
-                  CodeQ Ethical Hacking
-                </option>
-                <option value="CodeQ Senior">CodeQ Senior</option>
-                <option value="LingoQ Explorer">LingoQ Explorer</option>
-              </select>
-            </div>
-            <div>
-                <label>Type your Text here</label>
-                <textarea></textarea>
-            </div>
-            <div style={{display:'block'}}>
-                <button style={{padding:'15px 25px', border:'none', background:'#185C98' , color:'#FFF', margin:'20px 0',borderRadius:'5px'}}>
-                    SEND
-                </button>
-            </div>
-          </form>
+                Submit
+              </Button>
+            </Form.Group>
+          </Form>
         </div>
         <Footer />
       </div>

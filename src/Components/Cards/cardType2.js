@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../App.css";
 import Aisrc from "../../Assets/ai.png";
 import mssrc from "../../Assets/msoffice.png";
 import gsuitesrc from "../../Assets/gsuite.png";
+import {ImCross} from "react-icons/im"
 
 const CardType2 = ({title,icon}) => {
+  let [flip,setFlip] = useState(false)
+  let style={
+    transform:flip?"rotateY(180deg)":null
+  }
+  let flipCard = () =>{
+    setFlip(!flip)
+  }
   return (
     <div className="card-container">
-      <div className="cardType-2">
+      <div style={style} className="cardType-2">
         <div className="front">
           <div className="icon">
             <i className={icon}></i>
@@ -24,7 +32,7 @@ const CardType2 = ({title,icon}) => {
             <img src={gsuitesrc} />
             <img src={Aisrc} />
           </div>
-          <div  className="pricing-wrapper flex j-center">
+          <div className="pricing-wrapper flex j-center">
             <div className="pricing flex j-center a-center">
               <p>1on1</p>
               <p>₹7380</p>
@@ -34,14 +42,31 @@ const CardType2 = ({title,icon}) => {
               <p>₹5166</p>
             </div>
           </div>
-          <button>Book Free Demo</button>
+          <button
+            style={{
+              cursor: "pointer",
+              boxShadow: "0 0 2px 0 rgba(0,0,0,0.4)",
+            }}
+            onClick={() => flipCard()}
+          >
+            Book Free Demo
+          </button>
         </div>
         <div className="back flex j-center a-center">
+          <span style={{ position: "absolute", top: "30px", right: "30px" }}>
+            <ImCross style={{ cursor: "pointer" }} onClick={() => flipCard()} />
+          </span>
           <div className="icon">
             <i className="fas fa-snowflake"></i>
           </div>
-          <h1>Code Q Junior</h1>
-          <p>Learn Symbolic and Block based Coding using Scratch</p>
+          <h1 style={{ color: "#FFB606" }}>Code Q Junior</h1>
+          <p style={{ margin: "10px 0" }}>
+            Learn Symbolic and Block based Coding using Scratch
+          </p>
+          <div style={{ marginTop: "50px" }} className="btn-group">
+            <a style={{ display: "none" }}></a>
+            <a href="/contact-us">CONTACT US</a>
+          </div>
         </div>
       </div>
     </div>

@@ -5,30 +5,29 @@ import NavBar from "./NavBar";
 import ExploreSection from "./ExploreSection";
 import Testimony from "./Testimony";
 import Footer from "./Footer";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import Swiper from './swiper'
 const Home = () => {
   return (
-    <div
-      style={{ position: "relative" }}
-      className="Home"
-    >
+    <div style={{ position: "relative" }} className="Home">
       <NavBar />
       <section className="section-1">
         {/* <img src="https://ccinfo24.com/courses/wp-content/uploads/2021/07/screen-post-folBYP0ED0k-unsplash-1-scaled.jpg" /> */}
         <div className="image-filter"></div>
         <div className="intro-info">
           <h1>Growth You Career With Complete Courses</h1>
-          <p>
+          <p data-aos="fade-left">
             Our Personalised Programs work to inspire every chapter of a child’s
             life. Join us now on this journey of fun and learning like many
             other students have!
           </p>
           <div className="btn-group">
-            <a href="/home">READ MORE</a>
+            <a href="/">READ MORE</a>
             <a href="/contact-us"> CONTACT US</a>
           </div>
         </div>
       </section>
-      <section  className="section-2 flex j-center f-wrap">
+      <section className="section-2 flex j-center f-wrap">
         <Card icon_type="fas fa-language" title="Art Programs" />
         <Card icon_type="fas fa-language" title="Art Programs" />
         <Card icon_type="fas fa-language" title="Art Programs" />
@@ -71,11 +70,8 @@ const Home = () => {
           <span></span>
           <i className="fas fa-star"></i>
           <span></span>
-        </div>
-        <div className="flex j-center f-wrap">
-          <Testimony imgSrc="https://ccinfo24.com/courses/wp-content/uploads/2019/11/pexels-photo-91227-500x500-1-150x150.jpg" />
-          <Testimony imgSrc="https://ccinfo24.com/courses/wp-content/uploads/2019/11/pexels-photo-769745-500x500-1-150x150.jpg" />
-        </div>
+        </div>  
+        <Swiper />
       </section>
       <Footer />
     </div>

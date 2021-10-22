@@ -7,6 +7,17 @@ input,textarea,select{
   border: none;
   outline: none;
 }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 *{
   --e-global-color-primary: #6EC1E4;
     --e-global-color-secondary: #54595F;
@@ -67,18 +78,26 @@ body{
 .header >nav a{
   display: inline-block;
  text-decoration: none;
- margin-right: 10px;
-  padding: 25px 25px;
+ margin: 0 25px;
+  /* padding: 0px 25px; */
   /* background-color: red; */
   font-size: 1.2rem;
   color: #777777;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header nav hr{
+  -webkit-appearance: none;
+  width: 1px;
+  height: 20px;
+  background-color: rgba(0,0,0,0.2);
+  box-shadow: none;
+  border: none;
 }
 .header nav a:hover{
-  border-top: 5px solid #FF8F00;
-  color:var(--e-global-color-1e650fd6);
-  background-color: var(--e-global-yellow);
+  /* border-top: 5px solid #FF8F00; */
+  color: var(--e-global-yellow);
 }
 .section-1{
   width: 100%;
@@ -120,11 +139,12 @@ body{
   line-height: 1.5em;
   width: 58%;
   font-size: 19px;
+  font-family: 'Lora', serif;
 }
 .intro-info .btn-group {
   margin-top: 40px;
 }
-.intro-info .btn-group a{
+.btn-group a{
   text-decoration: none;
   margin-right: 15px;
   padding: 15px 25px;
@@ -170,6 +190,7 @@ body{
 .card-type-1 >h1{
   margin-bottom: 10px;
   color: #64686d;
+  font-family: Loto sans-serif;
 }
 .card-type-1 > p{
   font-size: 15px;
@@ -223,9 +244,9 @@ body{
   transition:  0.5s ease;
 
 }
-.card-container:hover .cardType-2{
+/* .card-container:active .cardType-2{
   transform: rotateY(180deg);
-}
+} */
 .card-container > .cardType-2 .front{
   padding: 20px;
   width: 100%;
@@ -346,8 +367,8 @@ body{
   font-family: "Playfair Display", Sans-serif;
 }
 .testimony{
-  width: 36%;
-  margin:10px;
+  width: 80%;
+  margin:auto;
   position:relative;
 }
 footer{
@@ -378,20 +399,16 @@ footer .footer-nav{
 } */
 footer .social span{
   display: inline-block;
-  margin: 10px 5px;
-  width: 50px;
-  height: 50px;
-  background-color: red;
+  margin: 10px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
   cursor: pointer;
 }
 footer .social span:hover{
   opacity: 0.9;
 }
-footer .social span:nth-child(1){
+/* footer .social span:nth-child(1){
   background-color: #385297;
 }
 footer .social span:nth-child(2){
@@ -399,10 +416,8 @@ footer .social span:nth-child(2){
 }
 footer .social span:nth-child(3){
   background-color: #BB1F2B;
-}
-footer .social span i{
-  font-size: 25px;
-}
+} */
+
 .active-route{
   background-color: #743EFF;
 }
@@ -421,6 +436,9 @@ footer .social span i{
   font-size: 15px;
   font-weight: 500;
   margin-bottom: 2px;
+}
+.contact-btn{
+  width: 100px;
 }
 .form-wrapper form div input,textarea,select,option{
   height: 40px;
@@ -456,7 +474,8 @@ textarea{
 .mobile-nav{
       flex-direction: column;
       background-color: #1F1D26;
-      position:fixed;
+      position:sticky;
+      top: 75px;
       z-index:100;
       width:100%;
       
@@ -469,6 +488,9 @@ textarea{
   text-decoration: none;
   padding: 10px 5px;
   font-size: 14px;
+}
+.header > nav >i{
+  display: none;
 }
 .mobile-nav > a:nth-child(1){
   border-bottom: 1px solid #3b384b;
@@ -526,6 +548,9 @@ textarea{
   .intro-info >p{
     padding: 0 10px;
   }
+  .contact-btn{
+    width: 100%;
+  }
 }
 @media (max-width:335px){
   .intro-info .btn-group a {
@@ -546,3 +571,44 @@ textarea{
     padding: 0 5px;
   }
 }
+
+@media(max-width:450px){
+  .testimony{
+    flex-direction: column;
+  }
+}
+.d-none{
+  display: block;
+}
+/* coresel starts here */
+
+.corsel{
+  width: 500px;
+  margin: auto;
+  height: 200px;
+  overflow-x: hidden;
+}
+/* .testimony{
+  width: 500px;
+  display: inline-block;
+} */
+.bullets{
+  width: 100px;
+  height: 100px;
+}
+.swiper-wrapper-1{
+  margin: auto;
+  width: 700px;
+}
+@media (max-width:700px){
+ .swiper-wrapper-1{
+  width: 100%;
+  };
+}
+.swiper-button-prev::after ,.swiper-button-next::after  {
+    color:#FFB606
+}
+
+h1{
+    font-family: "Playfair Display", Sans-serif;
+}  
