@@ -75,7 +75,7 @@ const Contactus = () =>{
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Last name</Form.Label>
+              <Form.Label>Phone no</Form.Label>
               <Form.Control type="phone" placeholder="" />
             </Form.Group>
 
